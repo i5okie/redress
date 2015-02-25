@@ -1,0 +1,20 @@
+.row
+  .large-12.columns
+    / %h2 SERVICES
+    %h3 Welcome to IBC Customer Self-Service portal
+    %p You may find quick start guides, drivers, and manuals for your purchased devices here.
+.container
+  / = render 'layouts/slides'
+  = render 'layouts/contacts'
+  .row
+    .large-12.columns
+      %h2 SUPPORT RESOURCES
+      .grid
+        %p Learn how to install and configure your devices / download documentation and drivers.
+
+    / Nav tabs
+    %dl.tabs.vertical{"data-tab" => "true"}
+      = render partial: 'tab', collection: @items
+      
+    .tabs-content.vertical
+      = render partial: 'category', collection: @items

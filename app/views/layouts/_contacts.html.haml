@@ -1,0 +1,40 @@
+%br
+.row{"data-equalizer" => "true"}
+  .large-6.columns{"data-equalizer-watch" => "true"}
+    %h2 CONTACT
+    .panel
+      %p.one For assistance with your technical questions, here are some ways to get in touch with us:
+      %ul.midium-block-grid-2
+        %li.contact
+          Toll-Free:
+          %a{:href => "tel:18006615570"} (800) 661-5570        
+        %li.contact
+          Canada:
+          %a{:href => "tel:12504933201"} (250) 493-3201
+  .large-6.columns{"data-equalizer-watch" => "true"}
+    %h2 CONNECT
+    .panel
+      %p.two For help with your computer, connect with one of our technicians now:
+      .row.collapse
+        .small-10.columns
+          %input#codeBox{:placeholder => "Invitation Code", :type => "text"}
+        .small-2.columns
+          %a.button.postfix#codeButton{:href => "#"} Join
+    :javascript
+      window.onload = function () {
+          document.getElementById("codeButton").onclick = function () {
+              SC.context.scriptBaseUrl = "http://live.ibcworld.net/";
+              SC.service.getGuestSessionInfo(document.getElementById("codeBox").value, null, 0, function (result) {
+                  if (result.ss) {
+                      SC.launch.getSortedLaunchers()[0].launch(SC.util.combineObjects(result.ss.clp, SC.context.clp, {
+                          y: "Guest"
+                      }));
+                  } else {
+                      document.getElementById("codeBox").value = "";
+                      alert("The entered invitation code is incorrect.");
+                  }
+              }, function (result) {
+                  alert("Call failed");
+              });
+          };
+      };
