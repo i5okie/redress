@@ -1,8 +1,11 @@
 Redress
 ================
 
+[LIVE DEMO](https://secret-forest-2712.herokuapp.com)
 [![Build Status](https://travis-ci.org/i5okie/redress.svg?branch=master)](https://travis-ci.org/i5okie/redress)
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+
 
 Self-Service Portal Project for manufacturers and resellers
 -----------
