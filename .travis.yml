@@ -7,7 +7,7 @@ before_install:
 deploy:
   provider: heroku
   api_key:
-    secure: j/R7493fmUqz5jYKn/9NaDI3fEPsuXKHcln3EuSn4LTvQ4oHYGFR14D7NRub0pba8rIaIGUzUHFB/nJGLGZkJ9ALe9XuhVO/GJPK9O5WUYRKzIZAEAwo13neG5CtVINIS2WH6RHNhZ8rlsVc7q8hG19PiToeREAFzatLeQaF4RQ=
+    secure: O/pqaEpd+Fuwrj6DPFEfr06y2h/rV7ulU1n+Zq1QdEIhnxEwqrgVB9edlUGGmtfKSzHUhB5MjKrH9sNq1HoOepwg9bBUHI91f9Zg6CBSpWEw3BOg2YqUS6Z3pyj1LdJftVqC652gnZj/UqfAE8BYDf1jz2PbJdlh8Y8+QTvUixs=
   app: secret-forest-2712
   on:
     repo: i5okie/redress
