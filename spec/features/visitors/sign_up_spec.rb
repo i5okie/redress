@@ -2,6 +2,7 @@
 #   As a visitor
 #   I want to sign up
 #   So I can visit protected areas of the site
+Recaptcha.with_configuration(:public_key => '12345') do
 feature 'Sign Up', :devise do
 
   # Scenario: Visitor can sign up with valid email address and password
@@ -59,4 +60,5 @@ feature 'Sign Up', :devise do
     expect(page).to have_content "Password confirmation doesn't match"
   end
 
+end
 end
