@@ -18,6 +18,7 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'pundit'
 gem 'simple_form'
+gem "recaptcha", :require => "recaptcha/rails"
 group :development do
   gem 'better_errors'
   gem 'html2haml'
