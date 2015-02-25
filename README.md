@@ -14,7 +14,6 @@ This is a complete rewrite of the original project.
 
 
 todo: edit this:
----
 A visitor is first met with any marketing information, and contact information
 of how to get phone assistance or remote tech support (optional).
 
@@ -34,7 +33,7 @@ functionality in the future. Some of this functionality could be issue tracking,
 product tracking. Generating printable barcode label for customers to scan and
 direct to specific product page, where they will be able to see any warranty information
 as well as service contracts, etc.
----
+
 
 
 Ruby on Rails
