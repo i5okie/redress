@@ -13,6 +13,7 @@ group :development, :test do
   gem 'spring'
 end
 gem 'devise'
+gem 'carrierwave'
 gem 'foundation-rails'
 gem 'haml-rails'
 gem 'high_voltage'
