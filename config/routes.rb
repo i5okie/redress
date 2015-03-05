@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     root 'base#index'
+    resources :categories
   end
 
   get 'categories/attachments'
