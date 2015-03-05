@@ -1,13 +1,11 @@
-describe User do
+describe 'User Account' do
+  
+  describe '#email' do
+    context "with invalid format" do
+      user = User.new(email: "bad email")
 
-  before(:each) { @user = User.new(email: 'user@example.com') }
-
-  subject { @user }
-
-  it { should respond_to(:email) }
-
-  it "#email returns a string" do
-    expect(@user.email).to match 'user@example.com'
+      it { expect(user).to be_invalid }
+    end
   end
 
 end
