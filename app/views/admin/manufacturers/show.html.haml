@@ -1,0 +1,14 @@
+.container
+  .row
+    .large-12.columns
+      %ol.breadcrumbs
+        %li
+          %a{:href => "#"}= link_to 'Admin Section', admin_root_path
+        %li
+          %a{:href => "#"}= link_to 'Manufacturers', admin_manufacturers_path
+        %li.active= @manufacturer.name
+  .row
+    .heading.moon
+      .large-6.columns
+        .h1
+          = @manufacturer.name

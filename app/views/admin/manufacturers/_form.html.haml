@@ -1,0 +1,35 @@
+= simple_form_for [:admin, manufacturer], :html => { :multipart => true } do |f|
+  - if notification = f.error_notification
+    .alert-box.warning.radius{ "data-alert" => true }
+      %a.close{href: "#{}"}
+      = notification
+
+  .row
+    .large-12.columns
+      %fieldset
+        %legend
+          .label.radius
+            Manufacturer Details
+        .row
+          .large-8.columns
+            = f.input :name, required: true, input_html: { class: 'form-control' }
+        .row
+          .large-6.columns
+            = f.input :mlink, input_html: { class: 'form-control' }
+        .row
+          .large-6.columns
+            = f.input :slink, input_html: { class: 'form-control' }
+        .row
+          .large-5.columns
+            = f.input :sphoneus, input_html: { class: 'form-control' }
+          .large-5.columns
+            = f.input :sphoneca, input_html: { class: 'form-control' }
+          
+  .row
+    %ul.button-group.right
+      %li 
+        / =link_to admin_manufacturer_path, @manufacturer, :class => 'small radius button'
+      %li 
+        =f.button :submit, "Save", :class => "alert small radius button"
+      %li 
+        =link_to 'Cancel', admin_manufacturers_path, :class => 'small radius button secondary'

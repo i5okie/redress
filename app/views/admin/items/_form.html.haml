@@ -1,0 +1,107 @@
+= simple_form_for [:admin, @item], :html => { :multipart => true } do |f|
+  - if notification = f.error_notification
+    .alert-box.warning.radius{ "data-alert" => true }
+      %a.close{href: "#{}"}
+      = notification
+
+  .row
+    .large-12.columns
+      %fieldset
+        %legend
+          .label.radius
+            item DETAILS
+        .row
+          .large-6.columns
+            = f.input :name, required: true, input_html: { class: 'form-control' }
+          .large-6.columns
+            = f.input :manufacturer do#, input_html: { class: 'form-control' }
+              = f.select :manufacturer_id, Manufacturer.all.map { |m| [m.name, m.id]}, include_blank: true
+        .row
+          .large-6.columns
+            = f.input :model, required: true, input_html: { class: 'form-control' }
+          .large-6.columns
+            = f.input :category, required: true do
+              = f.select :category_id, Category.all.map { |c| [c.name, c.id]}, include_blank: true
+        .row
+          .large-4.columns
+            / = image_tag @item.image_url(:medium).to_s, :class=>"th radius"
+            = f.input :image, as: :file, label: false, input_html: { id: 'basic' }
+
+          .large-8.columns
+            = f.input :description, label: false, input_html: { class: 'form-control' }
+          .large-8.columns
+            / = f.input :link, input_html: { class: 'form-control' }
+          .large-8.columns
+            / = f.input :tag_list, input_html: { class: 'tagz', id: 'input-tags'}
+          .large-8.columns
+            / = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
+  .row
+  /   .large-6.columns.file_tile
+  /     %fieldset
+  /       %legend
+  /         .label.radius
+  /           DOCUMENTS
+  /       .row.header
+  /         .small-2.small-offset-10.column.column_label
+  /           %span= "Remove"
+
+  /       / - if @item.documents.empty?
+  /       /   = render 'empty'
+  /       / - else
+  /       /   = render partial: 'doc', collection: @item.documents, locals: { f: f }
+
+  /       / .row
+  /       /   .panel.top-buffer
+  /       /     = f.simple_fields_for :documents, @item.documents.build do |d|
+  /       /       = d.label :doc, "Upload a document"
+  /       /       = d.file_field :doc
+
+  /   .large-6.columns.file_tile
+  /     %fieldset
+  /       %legend
+  /         .label.radius
+  /           ATTACHMENTS
+  /       .row.header
+  /         .small-2.small-offset-10.column.column_label
+  /           %span= "Remove"
+  /       / - if @item.attachments.empty?
+  /       /   = render 'empty'
+  /       / - else
+  /       /   = render partial: 'att', collection: @item.attachments, locals: { f: f }
+
+  /       / .row
+  /       /   .panel.top-buffer
+  /       /     = f.simple_fields_for :attachments, @item.attachments.build do |a|
+  /       /       = a.label :file, "Upload an attachment or file"
+  /       /       = a.file_field :file
+  / .row.file_tile
+  /   .large-12.columns
+  /     %fieldset
+  /       %legend
+  /         .label.radius
+  /           Videos
+  /       .row.header
+  /         .small-2.small-offset-10.column.column_label
+  /           %span= "Remove"
+
+  /       / - if @item.videos.empty?
+  /       /   = render 'empty'
+  /       / - else
+  /       /   = render partial: 'vid', collection: @item.videos, locals: { f: f }
+
+  /       / .row
+  /       /   .panel.top-buffer
+  /       /     = f.simple_fields_for :documents, @item.videos.build do |d|
+  /       /       = d.label :doc, "Add new video"
+  /       /       = d.input :name
+  /       /       = d.input :description
+  /       /       = d.input :source
+
+  .row
+    %ul.button-group.right
+      %li 
+        / =link_to 'Show', @item, :class => 'small radius button'
+      %li 
+        =f.button :submit, "Save", :class => "alert small radius button"
+      %li 
+        =link_to 'Cancel', admin_items_path, :class => 'small radius button secondary'

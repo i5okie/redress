@@ -1,1 +1,28 @@
-test
+.row
+  .large-12.columns
+    .panel
+      %i.fa.fa-list.fa-1x Categories
+      %a.pull-right{:href => new_admin_category_path}
+        %i.fa.fa-plus.fa-1x 
+    %table.tude
+      %thead
+        %tr
+          %th{width: 400} Name
+          %th{width: 225}
+      %tbody
+        - @categories.each do |category|
+          %tr.classy
+            %td= category.name
+            %td
+              .button-group.radius.pull-right
+                %a.button.secondary.tiny{:href => admin_category_path(category)}
+                  %i.fa.fa-info.fa-fw.fa-2x
+                  
+                %a.button.secondary.tiny{:href => edit_admin_category_path(category)}
+                  %i.fa.fa-pencil.fa-fw.fa-2x
+                  
+                %a.button.alert.tiny{:href => category, method: :delete, data: { confirm: 'Are you sure?' }}
+                  %i.fa.fa-trash-o.fa-fw.fa-2x
+
+                
+    %br

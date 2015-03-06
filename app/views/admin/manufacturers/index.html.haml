@@ -1,0 +1,44 @@
+.row
+  .large-12.columns
+    .panel
+      %i.fa.fa-list.fa-1x MANUFACTURERS
+      %a.pull-right{:href => new_admin_manufacturer_path}
+        %i.fa.fa-plus.fa-1x 
+    %table.tude
+      %thead
+        %tr
+          %th{width: 340} Name
+          %th Phone Numbers
+          %th
+      %tbody
+        - @manufacturers.each do |mann|
+          %tr.classy
+            %td= mann.name
+            %td
+              .button-group.radius.pull-right
+                %a.button.secondary.tiny{:href => "tel:#{mann.sphoneus}"}
+                  %i.fa-1x
+                  = 'US  ' + number_to_phone(mann.sphoneus, area_code: true) 
+                %a.button.secondary.tiny{:href => "tel:#{mann.sphoneca}"}
+                  %i.fa-1x
+                  = 'CA  ' + number_to_phone(mann.sphoneca, area_code: true) 
+              
+            %td
+              .button-group.radius.pull-right
+                %a.button.secondary.tiny{:href => mann.mlink}
+                  %i.fa.fa-link.fa-fw
+
+                %a.button.secondary.tiny{:href => mann.slink}
+                  %i.fa.fa-life-ring.fa-fw
+
+                %a.button.secondary.tiny{:href => admin_manufacturer_path(mann)}
+                  %i.fa.fa-info.fa-fw
+                  
+                %a.button.secondary.tiny{:href => edit_admin_manufacturer_path(mann)}
+                  %i.fa.fa-pencil.fa-fw
+                  
+                %a.button.alert.tiny{:href => mann, method: :delete, data: { confirm: 'Are you sure?' }}
+                  %i.fa.fa-trash-o.fa-fw
+
+                
+    %br

@@ -11,5 +11,6 @@ CarrierWave.configure do |config|
   #   config.fog_directory = ENV["S3_BUCKET"]
   # else
     config.storage = :file
+    # config.serve_static_assets = true
   # end
 end

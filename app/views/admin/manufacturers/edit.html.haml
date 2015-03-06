@@ -1,0 +1,6 @@
+.row
+  .large-12.columns
+    -if user_signed_in?
+      .container
+        %h1 New Manufacturer
+        = render "form", manufacturer: @manufacturer

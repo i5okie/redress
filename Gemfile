@@ -14,7 +14,9 @@ group :development, :test do
 end
 gem 'devise'
 gem 'carrierwave'
+gem "mini_magick"
 gem 'foundation-rails'
+gem "font-awesome-rails"
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'pundit'

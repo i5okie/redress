@@ -2,8 +2,8 @@
   .large-12.columns
     .panel
       %i.fa.fa-list.fa-1x ITEMS
-      / %a.pull-right{:href => new_product_path}
-      /   %i.fa.fa-plus.fa-1x 
+      %a.pull-right{:href => new_admin_item_path}
+        %i.fa.fa-plus.fa-1x 
     %table.tude
       %thead
         %tr
@@ -15,11 +15,11 @@
         - @items.each do |item|
           %tr.classy
             %td= item.name
-            %td= item.manufacturer.name
+            %td= item.manufacturer
             %td= item.model
             %td
               .button-group.radius.pull-right
-                %a.button.secondary.tiny{:href => item_path(item)}
+                %a.button.secondary.tiny{:href => admin_item_path(item)}
                   %i.fa.fa-info.fa-fw.fa-2x
                   
                 %a.button.secondary.tiny{:href => edit_admin_item_path(item)}
@@ -27,4 +27,6 @@
                   
                 %a.button.alert.tiny{:href => item, method: :delete, data: { confirm: 'Are you sure?' }}
                   %i.fa.fa-trash-o.fa-fw.fa-2x
+
+                
     %br

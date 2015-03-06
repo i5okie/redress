@@ -1,6 +1,7 @@
 class Admin::CategoriesController < Admin::BaseController
 
   def index
+    @categories = Category.all
   end
   
   def new
@@ -11,7 +12,7 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.new(category_params)
     if @category.save
       flash[:notice] = "Category has been created."
-      redirect_to "/admin/categories"
+      redirect_to admin_categories_path
     else
       flash[:alert] = "Category has not been created."
       render "new"
@@ -23,12 +24,12 @@ class Admin::CategoriesController < Admin::BaseController
     @category.destroy
 
     flash[:notice] = "Category has been deleted."
-    redirect_to "admin/categories"
+    redirect_to admin_categories_path
   end
 
   private
 
   def category_params
-    params.require(:item).permit(:name)
+    params.require(:category).permit(:name)
   end
 end

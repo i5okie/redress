@@ -1,0 +1,21 @@
+.container
+  .row
+    .large-12.columns
+      %ol.breadcrumbs
+        %li
+          %a{:href => "#"}= link_to 'Home', root_path
+        %li
+          %a{:href => "#"}= link_to 'Items', admin_items_path
+        %li.active= @item.name
+  .row
+    .heading.moon
+      .large-6.columns
+        .h2
+          = @item.manufacturer.name
+        .h1
+          = @item.name
+        %p
+          .lead= @item.description
+      .large-4.columns
+        .right
+          = image_tag @item.image.url(:medium).to_s, :class=>"th radius"

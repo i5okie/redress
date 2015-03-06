@@ -6,21 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @attachments = @item.attachments
-  end
-
-  def create
-    @item = item.new(item_params)
-
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to @item, notice: 'item was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @item }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
-    end
+    # @attachments = @item.attachments
   end
 
 
