@@ -1,15 +1,42 @@
-
 // import the CSS framework
 @import "foundation";
 
 // override for the 'Home' navigation link
+
+.top-bar {
+  background: #4183D7;
+}
+
 .top-bar .name {
   font-size: rem-calc(13);
   line-height: 45px; }
 .top-bar .name a {
   font-weight: normal;
   color: white;
-  padding: 0 15px; }
+  padding: 0 15px; 
+  font-size: 2em; }
+
+.midpagec {
+  background: #22A7F0;
+  -webkit-box-shadow: 0 4px 0 0 #4183D7;
+  box-shadow: 0 4px 0 0 #4183D7;
+}
+
+.lowpagec .top-bar {
+  background: #22A7F0;
+  -webkit-box-shadow: 0 4px 0 0 #16A085;
+  box-shadow: 0 4px 0 0 #16A085;
+  .has-form {
+    background: none;
+    padding: 0 25px 0 0;
+  }
+}
+
+.browselist {
+  height: 200px;
+}
+
+
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create mixins using Foundation classes
@@ -41,12 +68,25 @@
 // to make views framework-neutral
 main {
   @include twelve-columns;
-  background-color: #eee;
+  background-color: #4183D7;
+  color: #fff;
+  padding: 0 0 20px 0;
   }
+itempanel {
+  @include twelve-columns;
+  background-color: #2ECC71;
+  color: #fff;
+  padding: 20px 0 0 0;
+    h2 {
+      color: #eee;
+    }
+  }
+
 section {
   @extend .row;
   margin-top: 20px;
-  }
+}
+
 
 // Styles for form views
 // using Foundation
@@ -93,7 +133,6 @@ section {
 }
 
 
-
 ///////////////////////////////////////////
 
 
@@ -103,6 +142,14 @@ section {
 
 .two {
   padding-bottom: 4px;
+}
+
+.top_h h1 {
+  color: #eee;
+}
+
+.contact_h {
+  color: #22313F;
 }
 
 a[href^="tel:"]:before {
@@ -220,13 +267,13 @@ http://svgeneration.com/generate/GPlay?height=8&width=8&background=f0f0f0&overla
 }
 
 footer {
-  padding: 15px 0;
-  width: 100%;
-  height: 20px;
+  @include twelve-columns;
   // background-color: #eee;
+  background-color: #6C7A89;
+  height: 100px;
+  padding: 40px 0;
   text-align: center;
   p {font-size: 0.8em;}
-  a {font-size: 20%;}
   // margin-bottom: 0;
 }
 
