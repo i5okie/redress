@@ -8,7 +8,5 @@ class CreateItems < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :items, :manufacturers
-    add_foreign_key :items, :categories
   end
 end
