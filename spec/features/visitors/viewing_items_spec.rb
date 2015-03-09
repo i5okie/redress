@@ -1,28 +1,28 @@
+feature 'Viewing Items' do
+  let(:user) {FactoryGirl.create(:user, :admin)}
+  
+  before do
+    signin(user.email, user.password)
 
+    category = FactoryGirl.create(:category, name: "computers")
+    manufacturer = FactoryGirl.create(:manufacturer)
+    @item = FactoryGirl.create(:item, name: "LaptopPC", manufacturer: manufacturer, category: category)
+    visit "/"
 
-# # Feature: Navigation links
-# #   As a visitor
-# #   I want to see navigation links
-# #   So I can find home, sign in, or sign up
+  end
 
-# feature 'Viewing Items', :devise do
-#   # Scenario: View navigation links
-#   #   Given I am a visitor
-#   #   When I visit the home page
-#   #   Then I see "home," "sign in," and "sign up"
-#   category = FactoryGirl.create(:category, name: "computers")
-#   manufacturer = FactoryGirl.create(:manufacturer)
-#   # item = FactoryGirl.create(:item)
-#   let!(:item){ FactoryGirl.create(:item, name: "LaptopPC", manufacturer: manufacturer, category: category) }
+  scenario 'view category' do
+    expect(page).to have_content 'COMPUTERS'
+  end
 
-#   scenario 'view items in computers category' do
+  scenario 'view item listed' do
+    expect(page).to have_content "LaptopPC"
+  end
 
-#     visit "/"
-#     click_link "Items"
-#     #click_link "view all"
-#     expect(page).to have_content item.name
-#     #expect(page).to have_content 'Sign in'
-#     #expect(page).to have_content 'Sign up'
-#   end
+  scenario 'view item' do
+    click_link 'LaptopPC'
+    expect(page).to have_content @item.name
+    expect(page).to have_content @item.description
+  end
 
-# end
+end
