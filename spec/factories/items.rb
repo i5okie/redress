@@ -1,9 +1,6 @@
 FactoryGirl.define do
   factory :item do
-    name "MyString"
-description "MyText"
-manufacturer nil
-category nil
+    name "my item"
+    description "Example description..... most amazing item ever!!!"
   end
-
 end

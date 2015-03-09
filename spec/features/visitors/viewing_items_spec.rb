@@ -1,28 +1,26 @@
 feature 'Viewing Items' do
   let(:user) {FactoryGirl.create(:user, :admin)}
-  
+  let!(:category) {FactoryGirl.create(:category)}
+  let!(:manufacturer) {FactoryGirl.create(:manufacturer)}
+
+  let!(:item) {FactoryGirl.create(:item, manufacturer: manufacturer, category: category)}
+
   before do
-    signin(user.email, user.password)
-
-    category = FactoryGirl.create(:category, name: "computers")
-    manufacturer = FactoryGirl.create(:manufacturer)
-    @item = FactoryGirl.create(:item, name: "LaptopPC", manufacturer: manufacturer, category: category)
     visit "/"
-
   end
 
   scenario 'view category' do
-    expect(page).to have_content 'COMPUTERS'
+    expect(page).to have_content category.name.upcase
   end
 
   scenario 'view item listed' do
-    expect(page).to have_content "LaptopPC"
+    expect(page).to have_content item.name
   end
 
   scenario 'view item' do
-    click_link 'LaptopPC'
-    expect(page).to have_content @item.name
-    expect(page).to have_content @item.description
+    click_link item.name
+    expect(page).to have_content item.name
+    expect(page).to have_content item.description
   end
 
 end
