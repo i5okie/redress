@@ -74,7 +74,8 @@ Contributions are welcome and encouraged. Please feel free to fork this project 
 
 Credits
 -------
-@i5okie - Ivan Polchenko
+@i5okie
+
 @rhizome
 
 License
