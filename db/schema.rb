@@ -38,14 +38,14 @@ ActiveRecord::Schema.define(version: 20150310191922) do
 
   create_table "itemattachments", force: :cascade do |t|
     t.string   "item_id"
-    t.string   "attachment_id"
+    t.integer   "attachment_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
   create_table "itemdocuments", force: :cascade do |t|
     t.string   "item_id"
-    t.string   "document_id"
+    t.integer   "document_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
