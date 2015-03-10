@@ -1,5 +1,9 @@
-class AttachmentsController < ApplicationController
+class Admin::AttachmentsController < Admin::BaseController
   before_action :set_attachment, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @attachments = Attachment.all
+  end
 
   def show
   end

@@ -20,6 +20,7 @@ gem 'foundation-rails'
 gem "font-awesome-rails"
 gem "figaro"
 gem 'haml-rails'
+gem "best_in_place"
 gem 'high_voltage'
 gem 'pundit'
 gem 'simple_form'

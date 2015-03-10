@@ -5,4 +5,4 @@
     %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
       %i.fa.fa-download.fa-fw
       %strong
-        = File.extname(document.doc_file_name).capitalize
+        = Doc.file.extension.upcase #extname(document.doc_file_name).capitalize

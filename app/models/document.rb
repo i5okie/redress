@@ -1,9 +1,11 @@
 class Document < ActiveRecord::Base
+  mount_uploader :doc, DocUploader
+  
   has_many :itemdocuments
   has_many :items, through: :itemdocuments
-  mount_uploader :docfile, DocfileUploader
+  
 
   def display_name
-    self.name.present? ? self.name : "untitled"
+    self.name.present? ? self.name : doc.file.identifier
   end
 end

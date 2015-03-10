@@ -1,0 +1,29 @@
+= simple_form_for [:admin, @document] do |f|
+  - if @document.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@document.errors.count, "error")} prohibited this document from being saved:"
+      %ul
+        - @document.errors.full_messages.each do |msg|
+          %li= msg
+  .row
+    .large-12.columns
+      %fieldset
+        %legend
+          .label.radius
+            DOCUMENT
+        .row
+          .large-6.columns
+            = f.input :name, required: true, input_html: { class: 'form-control' }
+          .large-6.columns
+            = f.input :description, input_html: { class: 'form-control' }
+        .row
+          .large-4.columns
+            = f.input :doc, as: :file, label: false, input_html: { id: 'basic' }
+        .row
+          %ul.button-group.right
+            / %li 
+            /   =link_to 'Show', admin_document_path(@document), :class => 'small radius button'
+            %li 
+              =f.button :submit, "Save", :class => "alert small radius button"
+            %li 
+              =link_to 'Cancel', admin_documents_path, :class => 'small radius button secondary'

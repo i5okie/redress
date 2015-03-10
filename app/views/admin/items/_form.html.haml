@@ -36,44 +36,44 @@
           .large-8.columns
             / = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
   .row
-  /   .large-6.columns.file_tile
-  /     %fieldset
-  /       %legend
-  /         .label.radius
-  /           DOCUMENTS
-  /       .row.header
-  /         .small-2.small-offset-10.column.column_label
-  /           %span= "Remove"
+    .large-6.columns.file_tile
+      %fieldset
+        %legend
+          .label.radius
+            DOCUMENTS
+        .row.header
+          .small-2.small-offset-10.column.column_label
+            %span= "Remove"
 
-  /       / - if @item.documents.empty?
-  /       /   = render 'empty'
-  /       / - else
-  /       /   = render partial: 'doc', collection: @item.documents, locals: { f: f }
+        - if @item.documents.empty?
+          = render 'empty'
+        - else
+          = render partial: 'doc', collection: @item.documents, locals: { f: f }
 
-  /       / .row
-  /       /   .panel.top-buffer
-  /       /     = f.simple_fields_for :documents, @item.documents.build do |d|
-  /       /       = d.label :doc, "Upload a document"
-  /       /       = d.file_field :doc
+        .row
+          .panel.top-buffer
+            = f.simple_fields_for :documents, @item.documents.build do |d|
+              = d.label :doc, "Upload a document"
+              = d.file_field :doc
 
-  /   .large-6.columns.file_tile
-  /     %fieldset
-  /       %legend
-  /         .label.radius
-  /           ATTACHMENTS
-  /       .row.header
-  /         .small-2.small-offset-10.column.column_label
-  /           %span= "Remove"
-  /       / - if @item.attachments.empty?
-  /       /   = render 'empty'
-  /       / - else
-  /       /   = render partial: 'att', collection: @item.attachments, locals: { f: f }
+    .large-6.columns.file_tile
+      %fieldset
+        %legend
+          .label.radius
+            ATTACHMENTS
+        .row.header
+          .small-2.small-offset-10.column.column_label
+            %span= "Remove"
+        - if @item.attachments.empty?
+          = render 'empty'
+        - else
+          = render partial: 'att', collection: @item.attachments, locals: { f: f }
 
-  /       / .row
-  /       /   .panel.top-buffer
-  /       /     = f.simple_fields_for :attachments, @item.attachments.build do |a|
-  /       /       = a.label :file, "Upload an attachment or file"
-  /       /       = a.file_field :file
+        .row
+          .panel.top-buffer
+            = f.simple_fields_for :attachments, @item.attachments.build do |a|
+              = a.label :file, "Upload an attachment or file"
+              = a.file_field :file
   / .row.file_tile
   /   .large-12.columns
   /     %fieldset

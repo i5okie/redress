@@ -1,0 +1,8 @@
+.row.filelist
+  .small-8.columns.filename
+    = best_in_place doc, :name, :nil => doc.doc.file.identifier
+  .small-2.columns.download_link
+    = link_to "Download", doc.file.url, class: "small-offset-1"
+  .small-2.columns.delete_checkbox
+    = f.simple_fields_for :documents, doc do |document|
+      = document.input_field :_destroy, as: :boolean

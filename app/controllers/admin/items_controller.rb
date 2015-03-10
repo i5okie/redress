@@ -7,9 +7,15 @@ class Admin::ItemsController < Admin::BaseController
   
   def new
     @item = Item.new
+    @itemattachment = Itemattachment.all
+    @item.itemattachments.build
+    @item.itemdocuments.build
   end
 
   def edit
+    @itemattachment = Itemattachment.all
+    @item.itemattachments.build
+    @item.itemdocuments.build
   end
 
   def create
@@ -48,6 +54,7 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def item_params
-    params.require(:item).permit(:name, :modelname, :description, :manufacturer_id, :category_id, :image)
+    params.require(:item).permit(:name, :modelname, :description, :manufacturer_id, :category_id, :image, attachments_attributes: [:file, :id, :_destroy], 
+                                        documents_attributes: [:doc, :id, :_destroy])
   end
 end

@@ -10,7 +10,7 @@ feature 'Creating Items' do
 
   scenario 'with valid information', js: true do
     visit admin_items_path
-    expect(page).to have_content 'ITEMS'
+    expect(page).to have_content 'Items'
 
     find(".fa-plus").click
 
