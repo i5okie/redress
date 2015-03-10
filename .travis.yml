@@ -11,3 +11,7 @@ deploy:
   app: secret-forest-2712
   on:
     repo: i5okie/redress
+env:
+  global:
+  - secure: Ooi+Edwj48LaOjF4jizefBel/Ki8/vlCFIgUjXmyPJ7a4PcEGMobRypKK7oshUp55RlFf2RHKsJmJ3wj+qtC10CkLg0mClgSLPa8yZtWCFQsUjC6d8kf9g4WynEG0i9ht4u9yHX1qJpDQnIvSDwMrHx7ZwBvr0J+m1lE003GaVg=
+  - secure: PHzD4XhGb1OGhkhI8qy76nrNLOm+3Z1ThWxl9iw1Kuh9OQCafA5qMVkIJFxfD+4zVrPPLE/1cdKnB4Oh8/AJviCCkNrZCOmeuIkYsJZAKpyyGN9x5jmu8gWWrCZQ/IiCSLjLEb0yrapUdX3iiL1yGqA+xufLrktVw0bP3qBALtg=
