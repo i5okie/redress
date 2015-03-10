@@ -19,64 +19,62 @@
           = image_tag @item.image.url(:medium).to_s, :class=>"th radius fix_thumb"
   
 
-  / .row
-  /   .large-12.columns
-  /     %h3 Available Resources
-  /     - if @item.apms.present?
-  /       .panel
-  /         %p
-  /           Applies to following models:
-  /           - @item.apms.each do |tg|
-  /             %span.label.label-default= tg
-  /     / Nav tabs
-  /     %dl.tabs{"data-tab" => "true"}
-  /       %dd.active
-  /         %a{:href => "#documents"} DOCUMENTS
-  /       %dd
-  /         %a{:href => "#drivers"} DRIVERS
-  /       %dd
-  /         %a{:href => "#videos"} VIDEOS
-  /     .tabs-content
-  /       #documents.content.active
-  /         %table.table.table-striped.table-hover
-  /           %thead
-  /             %tr
-  /               %th{width: 850}
-  /                 Filename
-  /               %th{width: 100}
-  /                 Kind
-  /           %tbody
-  /             - if @item.documents.empty?
-  /               = render 'empty'
-  /             - else
-  /               = render partial: 'document', collection: @item.documents
-  /       #drivers.content
-  /         %table.table.table-striped.table-hover
-  /           %thead
-  /             %tr
-  /               %th{width: 840}
-  /                 Filename
-  /               %th{width: 100}
-  /                 Download
-  /           %tbody
-  /             - if @item.attachments.empty?
-  /               = render 'empty'
-  /             - else
-  /               = render partial: 'attachment', collection: @attachments
-  /       #videos.content
-  /         %table.table.table-striped.table-hover
-  /           %thead
-  /             %tr
-  /               %th{width: 650}
-  /                 / Video
-  /               %th{width: 400}
-  /                 / Description
-  /           %tbody
-  /             - if @item.videos.empty?
-  /               = render 'empty'
-  /             - else
-  /               = render partial: 'video', collection: @item.videos
-  / -if user_signed_in?
-  /   .row
-  /     .large-2.columns
-  /       = link_to "Edit", edit_item_path(@item), class: 'button tiny'
+  .row
+    .large-12.columns
+      %h3 Available Resources
+      / - if @item.apms.present?
+      /   .panel
+      /     %p
+      /       Applies to following models:
+      /       - @item.apms.each do |tg|
+      /         %span.label.label-default= tg
+      / Nav tabs
+      %dl.tabs{"data-tab" => "true"}
+        %dd.active
+          %a{:href => "#documents"} DOCUMENTS
+        %dd
+          %a{:href => "#drivers"} DRIVERS
+      .tabs-content
+        #documents.content.active
+          %table.table.table-striped.table-hover
+            %thead
+              %tr
+                %th{width: 850}
+                  Filename
+                %th{width: 100}
+                  Kind
+            %tbody
+              - if @item.documents.empty?
+                = render 'empty'
+              - else
+                = render partial: 'document', collection: @item.documents
+        #drivers.content
+          %table.table.table-striped.table-hover
+            %thead
+              %tr
+                %th{width: 840}
+                  Filename
+                %th{width: 100}
+                  Download
+            %tbody
+              - if @item.attachments.empty?
+                = render 'empty'
+              - else
+                = render partial: 'attachment', collection: @attachments
+        / #videos.content
+        /   %table.table.table-striped.table-hover
+        /     %thead
+        /       %tr
+        /         %th{width: 650}
+        /           / Video
+        /         %th{width: 400}
+        /           / Description
+        /     %tbody
+        /       - if @item.videos.empty?
+        /         = render 'empty'
+        /       - else
+        /         = render partial: 'video', collection: @item.videos
+  -if user_signed_in?
+    .row
+      .large-2.columns
+        = link_to "Edit", edit_item_path(@item), class: 'button tiny'

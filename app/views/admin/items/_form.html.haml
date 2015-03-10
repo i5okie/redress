@@ -18,7 +18,7 @@
               = f.select :manufacturer_id, Manufacturer.all.map { |m| [m.name, m.id]}, include_blank: true
         .row
           .large-6.columns
-            = f.input :model, required: true, input_html: { class: 'form-control' }
+            = f.input :modelname, required: true, input_html: { class: 'form-control' }
           .large-6.columns
             = f.input :category, required: true do
               = f.select :category_id, Category.all.map { |c| [c.name, c.id]}, include_blank: true

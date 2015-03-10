@@ -10,3 +10,9 @@
   .top-bar-section
     %ul
       = render 'layouts/navigation_links'
+
+- if user_signed_in?
+  %nav.top-bar{"data-topbar" => true}
+    .top-bar-section
+      %ul
+        = render 'layouts/admin_navigation_links'

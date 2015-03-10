@@ -1,27 +1,30 @@
-feature 'Viewing Items' do
+feature 'Creating Items' do
   let(:user) {FactoryGirl.create(:user, :admin)}
-  let(:category) {FactoryGirl.create(:category)}
-  let(:manufacturer) {FactoryGirl.create(:manufacturer)}
-
-  let(:item) {FactoryGirl.create(:item, manufacturer: manufacturer, category: category)}
+  let!(:category) {FactoryGirl.create(:category)}
+  let!(:manufacturer) {FactoryGirl.create(:manufacturer)}
 
   before do
     signin(user.email, user.password)
-    visit "/"
+    visit admin_root_path
   end
 
-  scenario 'view category' do
-    expect(page).to have_content 'COMPUTERS'
-  end
+  scenario 'with valid information', js: true do
+    visit admin_items_path
+    expect(page).to have_content 'ITEMS'
 
-  scenario 'view item listed' do
-    expect(page).to have_content "LaptopPC"
-  end
+    find(".fa-plus").click
 
-  scenario 'view item' do
-    click_link 'LaptopPC'
-    expect(page).to have_content @item.name
-    expect(page).to have_content @item.description
+    expect(page).to have_content "NEW ITEM"
+
+    fill_in "Name", with: "New Item 3000"
+    # page.select 'Category'
+    select category.name, from: 'item_category_id'
+    # fill_in "Manufacturer", with: manufacturer.name
+    fill_in "Modelname", with: "NI3000a"
+    select manufacturer.name, from: 'item_manufacturer_id'
+    fill_in "item_description", with: "This is an amazing item, it's great that you have it!"
+    click_button 'Save'
+    expect(page).to have_content 'Item has been created.'
   end
 
 end

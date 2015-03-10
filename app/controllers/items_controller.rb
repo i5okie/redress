@@ -1,12 +1,13 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @items = Item.all
-  end
+  # def index
+  #   @items = Item.all
+  # end
 
   def show
-    # @attachments = @item.attachments
+    @attachments = @item.attachments
+    @documents = @item.documents
   end
 
 
@@ -20,17 +21,14 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(  :name, 
                                         :description, 
-                                        :model, 
+                                        :modelname, 
                                         :manufacturer, 
                                         :link, 
                                         :image, 
                                         :tags, 
-                                        :apms, 
-                                        :tag_list, 
-                                        :apm_list, 
                                         :category_id, 
                                         attachments_attributes: [:file, :id, :_destroy], 
-                                        documents_attributes: [:doc, :id, :_destroy]
+                                        documents_attributes: [:file, :id, :_destroy]
                                         )
     end
 end

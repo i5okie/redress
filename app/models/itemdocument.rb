@@ -1,4 +1,4 @@
 class Itemdocument < ActiveRecord::Base
-  belongs_to :items
-  belongs_to :documents
+  belongs_to :item
+  belongs_to :document
 end

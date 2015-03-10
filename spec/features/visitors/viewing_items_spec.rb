@@ -1,5 +1,4 @@
 feature 'Viewing Items' do
-  let(:user) {FactoryGirl.create(:user, :admin)}
   let!(:category) {FactoryGirl.create(:category)}
   let!(:manufacturer) {FactoryGirl.create(:manufacturer)}
 

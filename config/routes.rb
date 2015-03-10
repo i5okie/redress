@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
-    root 'base#index'
+    root 'items#index'
     resources :categories
-    resources :items
+    resources :items, only: [:index, :new, :create, :destroy, :show, :edit]
     resources :manufacturers
   end
 

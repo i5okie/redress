@@ -1,4 +1,5 @@
 class Document < ActiveRecord::Base
+  has_many :itemdocuments
   has_many :items, through: :itemdocuments
   mount_uploader :docfile, DocfileUploader
 

@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+  <li><%= link_to 'Items', admin_items_path %></li>
+  <li><%= link_to 'Categories', admin_categories_path %></li>
+  <li><%= link_to 'Manufacturers', admin_manufacturers_path %></li>
+<% end %>
