@@ -14,7 +14,7 @@
         - @documents.each do |docm|
           %tr
             %td= docm.name
-            %td= docm.doc.file.identifier
+            %td= docm.doc.file.filename
             %td
               .button-group.radius.pull-right
                 %a.button.secondary.tiny{:href => admin_document_path(docm)}
