@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150310191922) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "attachments", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -37,14 +40,14 @@ ActiveRecord::Schema.define(version: 20150310191922) do
   end
 
   create_table "itemattachments", force: :cascade do |t|
-    t.string   "item_id"
+    t.integer   "item_id"
     t.integer   "attachment_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
   create_table "itemdocuments", force: :cascade do |t|
-    t.string   "item_id"
+    t.integer   "item_id"
     t.integer   "document_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -61,8 +64,8 @@ ActiveRecord::Schema.define(version: 20150310191922) do
     t.string   "modelname"
   end
 
-  add_index "items", ["category_id"], name: "index_items_on_category_id"
-  add_index "items", ["manufacturer_id"], name: "index_items_on_manufacturer_id"
+  add_index "items", ["category_id"], name: "index_items_on_category_id", using: :btree
+  add_index "items", ["manufacturer_id"], name: "index_items_on_manufacturer_id", using: :btree
 
   create_table "manufacturers", force: :cascade do |t|
     t.string   "name"
@@ -97,7 +100,9 @@ ActiveRecord::Schema.define(version: 20150310191922) do
     t.integer  "role"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "manufacturers"
 end

@@ -1,8 +1,8 @@
 %tr
   %td
-    = link_to document.name, document.doc.url
+    = link_to document.display_name, document.doc.url
   %td
     %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
       %i.fa.fa-download.fa-fw
       %strong
-        = Doc.file.extension.upcase #extname(document.doc_file_name).capitalize
+        = document.doc.file.extension.upcase

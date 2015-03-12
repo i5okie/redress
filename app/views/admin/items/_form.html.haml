@@ -54,7 +54,7 @@
           .panel.top-buffer
             = f.simple_fields_for :documents, @item.documents.build do |d|
               = d.label :doc, "Upload a document"
-              = d.file_field :doc
+              = d.input :doc, as: :file, label: false, input_html: { id: 'basic' }
 
     .large-6.columns.file_tile
       %fieldset

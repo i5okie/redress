@@ -9,6 +9,6 @@ class DocumentsController < ApplicationController
       @document = Document.find(params[:id])
     end
     def document_params
-      params.require(:document).permit(:name, :description, :file)
+      params.require(:document).permit(:name, :description, :file, :doc)
     end
 end

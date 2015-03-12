@@ -55,6 +55,6 @@ class Admin::ItemsController < Admin::BaseController
 
   def item_params
     params.require(:item).permit(:name, :modelname, :description, :manufacturer_id, :category_id, :image, attachments_attributes: [:file, :id, :_destroy], 
-                                        documents_attributes: [:doc, :id, :_destroy])
+                                        documents_attributes: [:doc, :file, :id, :_destroy])
   end
 end

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   resources :items
+  resources :documents, only: [:show]
   # get 'categories/attachments'
 
   root to: 'visitors#index'

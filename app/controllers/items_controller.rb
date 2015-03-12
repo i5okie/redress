@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
                                         :tags, 
                                         :category_id, 
                                         attachments_attributes: [:file, :id, :_destroy], 
-                                        documents_attributes: [:file, :id, :_destroy]
+                                        documents_attributes: [:file, :doc, :id, :_destroy]
                                         )
     end
 end

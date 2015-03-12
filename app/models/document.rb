@@ -6,6 +6,6 @@ class Document < ActiveRecord::Base
   
 
   def display_name
-    self.name.present? ? self.name : doc.file.identifier
+    self.name.present? ? self.name : doc.file.filename
   end
 end

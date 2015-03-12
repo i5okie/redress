@@ -24,8 +24,9 @@ gem "best_in_place"
 gem 'high_voltage'
 gem 'pundit'
 gem 'simple_form'
+gem 'pg'
 group :development do
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'html2haml'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
@@ -39,10 +40,8 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
   gem 'rubocop'
-  gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 group :test do
