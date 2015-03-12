@@ -42,7 +42,7 @@
           .label.radius
             DOCUMENTS
         .row.header
-          .small-2.small-offset-10.column.column_label
+          .small-2.small-offset-8.column.column_label
             %span= "Remove"
 
         - if @item.documents.empty?
@@ -62,7 +62,7 @@
           .label.radius
             ATTACHMENTS
         .row.header
-          .small-2.small-offset-10.column.column_label
+          .small-2.small-offset-8.column.column_label
             %span= "Remove"
         - if @item.attachments.empty?
           = render 'empty'
@@ -74,29 +74,6 @@
             = f.simple_fields_for :attachments, @item.attachments.build do |a|
               = a.label :file, "Upload an attachment or file"
               = a.file_field :file
-  / .row.file_tile
-  /   .large-12.columns
-  /     %fieldset
-  /       %legend
-  /         .label.radius
-  /           Videos
-  /       .row.header
-  /         .small-2.small-offset-10.column.column_label
-  /           %span= "Remove"
-
-  /       / - if @item.videos.empty?
-  /       /   = render 'empty'
-  /       / - else
-  /       /   = render partial: 'vid', collection: @item.videos, locals: { f: f }
-
-  /       / .row
-  /       /   .panel.top-buffer
-  /       /     = f.simple_fields_for :documents, @item.videos.build do |d|
-  /       /       = d.label :doc, "Add new video"
-  /       /       = d.input :name
-  /       /       = d.input :description
-  /       /       = d.input :source
-
   .row
     %ul.button-group.right
       %li 

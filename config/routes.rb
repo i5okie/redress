@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   namespace :admin do
-  get 'attachments/index'
+    get 'attachments/index'
   end
 
   namespace :admin do
-  get 'documents/index'
+    get 'documents/index'
   end
 
   namespace :admin do
@@ -22,12 +22,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items
+  resources :items, only: [:show]
   resources :documents, only: [:show]
-  # get 'categories/attachments'
 
   root to: 'visitors#index'
   devise_for :users
-  # resources :items, only: [:index, :show] do
-  # end
 end
