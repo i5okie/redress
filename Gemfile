@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.1'
 gem 'rails', '4.2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -29,6 +29,7 @@ group :development do
   # gem 'better_errors'
   gem 'html2haml'
   gem 'hub', :require=>nil
+  gem "awesome_print", require:"ap"
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
