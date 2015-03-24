@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'attachments/index'
-  end
-
-  namespace :admin do
-    get 'documents/index'
-  end
-
+  root to: 'visitors#index'
+  devise_for :users
+  
   namespace :admin do
     root 'items#index'
+    get 'attachments/index'
+    get 'documents/index'
+
     resources :categories
     resources :items
     resources :manufacturers
@@ -25,6 +23,4 @@ Rails.application.routes.draw do
   resources :items, only: [:show]
   resources :documents, only: [:show]
 
-  root to: 'visitors#index'
-  devise_for :users
 end
