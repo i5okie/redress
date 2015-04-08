@@ -1,5 +1,5 @@
 language: ruby
-rvm: 2.2.0
+rvm: 2.2.1
 script: bin/rake spec
 before_install:
 - export DISPLAY=:99.0
