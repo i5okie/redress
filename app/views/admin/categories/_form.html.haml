@@ -1,13 +1,24 @@
-= form_for [:admin, @category] do |f|
+= simple_form_for [:admin, @category] do |f|
   - if @category.errors.any?
     #error_explanation
       %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
       %ul
         - @category.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions
-    = f.submit 'Save'
+  .row
+    .large-12.columns
+      %fieldset
+        %legend
+          .label.radius
+            CATEGORY
+        .row
+          .large-6.columns
+            = f.input :name, required: true, input_html: { class: 'form-control' }
+        .row
+          %ul.button-group.right
+            / %li 
+            /   =link_to 'Show', admin_document_path(@document), :class => 'small radius button'
+            %li 
+              =f.button :submit, "Save", :class => "alert small radius button"
+            %li 
+              =link_to 'Cancel', admin_categories_path, :class => 'small radius button secondary'
