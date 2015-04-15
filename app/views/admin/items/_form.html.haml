@@ -42,8 +42,12 @@
           .label.radius
             DOCUMENTS
         .row.header
-          .small-2.small-offset-8.column.column_label
-            %span= "Remove"
+          .small-6
+            %span.column.column_label
+              Document Name
+          .small-2.small-offset-10
+            %span.column.column_label
+              Remove
 
         - if @item.documents.empty?
           = render 'empty'
@@ -62,8 +66,12 @@
           .label.radius
             ATTACHMENTS
         .row.header
-          .small-2.small-offset-8.column.column_label
-            %span= "Remove"
+          .small-6
+            %span.column.column_label
+              Attachment Name
+          .small-2.small-offset-10
+            %span.column.column_label
+              Remove
         - if @item.attachments.empty?
           = render 'empty'
         - else

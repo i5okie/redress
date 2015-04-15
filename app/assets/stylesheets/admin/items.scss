@@ -1,3 +1,11 @@
 // Place all the styles related to the admin/items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.filename input{	
+	border-style: none !important;
+	padding: 2px 5px !important;
+	height: 20px !important;
+	box-shadow: none !important;
+	border-radius: 3px !important;
+}
