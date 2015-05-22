@@ -2,9 +2,10 @@ class Admin::ItemsController < Admin::BaseController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
+    # @items = Item.all
+    @items = Item.order(:name).page params[:page]
   end
-  
+
   def new
     @item = Item.new
     @itemattachment = Itemattachment.all
@@ -54,7 +55,7 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def item_params
-    params.require(:item).permit(:name, :modelname, :description, :manufacturer_id, :category_id, :image, attachments_attributes: [:file, :name, :id, :_destroy], 
+    params.require(:item).permit(:name, :modelname, :description, :manufacturer_id, :category_id, :image, attachments_attributes: [:file, :name, :id, :_destroy],
                                         documents_attributes: [:doc, :name, :file, :id, :_destroy])
   end
 end

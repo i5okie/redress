@@ -51,7 +51,6 @@
 
         - if @item.documents.empty?
           = render 'empty'
-        - else
           = render partial: 'doc', collection: @item.documents, locals: { f: f }
 
         .row

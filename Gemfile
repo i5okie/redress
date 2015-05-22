@@ -19,6 +19,7 @@ gem "mini_magick"
 gem 'foundation-rails'
 gem "font-awesome-rails"
 gem "figaro"
+gem 'kaminari'
 gem 'haml-rails'
 gem "best_in_place"
 gem 'high_voltage'
