@@ -1,8 +1,7 @@
 .row.filelist
   .small-8.columns.filename
-    / # = best_in_place [@document, doc], :name, :nil => doc.doc.file.filename
     = f.simple_fields_for :documents, doc do |document|
-      = document.input_field :name, placeholder: doc.doc.file.identifier
+      = document.input_field :name, placeholder: doc.doc.file.filename
   .small-2.columns.download_link
     = link_to "Download", doc.doc.url, class: "small-offset-1 label secondary radius"
   .small-2.columns.delete_checkbox
