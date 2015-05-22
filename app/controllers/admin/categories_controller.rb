@@ -1,9 +1,9 @@
 class Admin::CategoriesController < Admin::BaseController
 
   def index
-    @categories = Category.all
+    @categories = Category.order(:name).page params[:page]
   end
-  
+
   def new
     @category = Category.new
   end

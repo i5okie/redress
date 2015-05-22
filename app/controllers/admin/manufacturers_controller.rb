@@ -2,9 +2,9 @@ class Admin::ManufacturersController < Admin::BaseController
   before_action :set_manufacturer, only: [:show, :edit, :update, :destroy]
 
   def index
-    @manufacturers = Manufacturer.all
+    @manufacturers = Manufacturer.order(:name).page params[:page]
   end
-  
+
   def new
     @manufacturer = Manufacturer.new
   end
