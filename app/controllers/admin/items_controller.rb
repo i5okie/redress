@@ -1,9 +1,12 @@
 class Admin::ItemsController < Admin::BaseController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :clear_search_index, only: [:index]
 
   def index
-    # @items = Item.all
-    @items = Item.order(:name).page params[:page]
+    @q = Item.ransack(params[:q])
+    # @search.sorts = 'name' if @search.sorts.empty?
+    # @items = Item.order(:name).page(params[:page])
+    @items = @q.result(distinct: true).page(params[:page])
   end
 
   def new
