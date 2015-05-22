@@ -1,9 +1,10 @@
 .row.filelist
-  .small-8.columns.filename
-    = f.simple_fields_for :documents, doc do |document|
-      = document.input_field :name, placeholder: doc.doc.file.filename
-  .small-2.columns.download_link
-    = link_to "Download", doc.doc.url, class: "small-offset-1 label secondary radius"
-  .small-2.columns.delete_checkbox
-    = f.simple_fields_for :documents, doc do |document|
-      = document.input_field :_destroy, as: :boolean
+  .large-12.columns
+    .large-11.columns.filename
+      = f.simple_fields_for :documents, doc do |document|
+        = document.input_field :name, placeholder: doc.doc.file.filename
+    -# .large-2.columns.download_link
+    -#   = link_to "Download", doc.doc.url, class: "small-offset-1 label secondary radius"
+    .large-1.columns.delete_checkbox
+      = f.simple_fields_for :documents, doc do |document|
+        = document.input_field :_destroy, as: :boolean, label: false

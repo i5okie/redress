@@ -36,21 +36,22 @@
           .large-8.columns
             / = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
   .row
-    .large-6.columns.file_tile
+    .large-12.columns.file_tile
       %fieldset
         %legend
           .label.radius
-            FILES
+            RESOURCES
         .row.header
-          .small-6
+          .small-2
             %span.column.column_label
               File Name
-          .small-2.small-offset-10
+          .small-2.small-offset-11
             %span.column.column_label
               Remove
 
         - if @item.documents.empty?
           = render 'empty'
+        - else
           = render partial: 'doc', collection: @item.documents, locals: { f: f }
 
         .row
