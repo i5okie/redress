@@ -40,11 +40,11 @@
       %fieldset
         %legend
           .label.radius
-            DOCUMENTS
+            FILES
         .row.header
           .small-6
             %span.column.column_label
-              Document Name
+              File Name
           .small-2.small-offset-10
             %span.column.column_label
               Remove
@@ -57,36 +57,36 @@
         .row
           .panel.top-buffer
             = f.simple_fields_for :documents, @item.documents.build do |d|
-              = d.label :doc, "Upload a document"
+              = d.label :doc, "Upload a file"
               = d.input :doc, as: :file, label: false, input_html: { id: 'basic' }
 
-    .large-6.columns.file_tile
-      %fieldset
-        %legend
-          .label.radius
-            ATTACHMENTS
-        .row.header
-          .small-6
-            %span.column.column_label
-              Attachment Name
-          .small-2.small-offset-10
-            %span.column.column_label
-              Remove
-        - if @item.attachments.empty?
-          = render 'empty'
-        - else
-          = render partial: 'att', collection: @item.attachments, locals: { f: f }
-
-        .row
-          .panel.top-buffer
-            = f.simple_fields_for :attachments, @item.attachments.build do |a|
-              = a.label :file, "Upload an attachment or file"
-              = a.file_field :file
+    -# .large-6.columns.file_tile
+    -#   %fieldset
+    -#     %legend
+    -#       .label.radius
+    -#         ATTACHMENTS
+    -#     .row.header
+    -#       .small-6
+    -#         %span.column.column_label
+    -#           Attachment Name
+    -#       .small-2.small-offset-10
+    -#         %span.column.column_label
+    -#           Remove
+    -#     - if @item.attachments.empty?
+    -#       = render 'empty'
+    -#     - else
+    -#       = render partial: 'att', collection: @item.attachments, locals: { f: f }
+    -#
+    -#     .row
+    -#       .panel.top-buffer
+    -#         = f.simple_fields_for :attachments, @item.attachments.build do |a|
+    -#           = a.label :file, "Upload an attachment or file"
+    -#           = a.file_field :file
   .row
     %ul.button-group.right
-      %li 
+      %li
         / =link_to 'Show', @item, :class => 'small radius button'
-      %li 
+      %li
         =f.button :submit, "Save", :class => "alert small radius button"
-      %li 
+      %li
         =link_to 'Cancel', admin_items_path, :class => 'small radius button secondary'
