@@ -7,7 +7,7 @@
     %table.tude
       %thead
         %tr
-          %th Name
+          %th= sort_link(@q, :name, [:name, 'kind ASC'], 'Name')
           %th{width: 335} Phone Numbers
           %th{width: 290}
       %tbody

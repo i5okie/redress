@@ -2,7 +2,8 @@ class Admin::DocumentsController < Admin::BaseController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
   def index
-    @documents = Document.order(:name).page params[:page]
+    @q = Document.ransack(params[:q])
+    @documents = @q.result(distinct: true).page(params[:page])
   end
 
   def show

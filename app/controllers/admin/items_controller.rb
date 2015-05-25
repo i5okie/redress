@@ -4,8 +4,6 @@ class Admin::ItemsController < Admin::BaseController
 
   def index
     @q = Item.ransack(params[:q])
-    # @search.sorts = 'name' if @search.sorts.empty?
-    # @items = Item.order(:name).page(params[:page])
     @items = @q.result(distinct: true).page(params[:page])
   end
 

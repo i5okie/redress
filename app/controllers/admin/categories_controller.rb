@@ -1,7 +1,8 @@
 class Admin::CategoriesController < Admin::BaseController
 
   def index
-    @categories = Category.order(:name).page params[:page]
+    @q = Category.ransack(params[:q])
+    @categories = @q.result(distinct: true).page(params[:page])
   end
 
   def new
