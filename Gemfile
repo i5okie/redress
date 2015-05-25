@@ -16,6 +16,7 @@ gem 'devise'
 gem 'carrierwave'
 gem "fog"
 gem "mini_magick"
+gem "ransack"
 gem 'foundation-rails'
 gem "font-awesome-rails"
 gem "figaro"

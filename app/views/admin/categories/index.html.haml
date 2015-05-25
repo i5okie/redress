@@ -7,7 +7,7 @@
     %table.tude
       %thead
         %tr
-          %th{width: 400} Name
+          %th{width: 400}= sort_link(@q, :category, [:category, 'kind ASC'], 'Categories')
           %th{width: 225}
       %tbody
         - @categories.each do |category|

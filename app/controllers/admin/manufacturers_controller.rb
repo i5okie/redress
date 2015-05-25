@@ -2,7 +2,8 @@ class Admin::ManufacturersController < Admin::BaseController
   before_action :set_manufacturer, only: [:show, :edit, :update, :destroy]
 
   def index
-    @manufacturers = Manufacturer.order(:name).page params[:page]
+    @q = Manufacturer.ransack(params[:q])
+    @manufacturers = @q.result(distinct: true).page(params[:page])
   end
 
   def new
