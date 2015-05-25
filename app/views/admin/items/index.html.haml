@@ -33,11 +33,7 @@
                   = link_to admin_item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert tiny" do
                     %i.fa.fa-trash-o.fa-fw
     %br
-    = content_tag :table do
-      = content_tag :th, sort_link(@q, :name, [:name, 'kind ASC'], 'Name')
-      = content_tag :th, sort_link(@q, :manufacturer, [:manufacturer, 'kind ASC'], 'Manufacturer')
-      = content_tag :th, sort_link(@q, :model, [:model, 'kind ASC'], 'Model')
-    / - end
+    = render 'results'
 .row
   .large-12.columns
     = paginate @items
