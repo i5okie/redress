@@ -1,6 +1,6 @@
-.container
+.container#ishow
   .row
-    .large-12.columns
+    .large-12.columns.fixwidth
       %ol.breadcrumbs
         %li
           %a{:href => "#"}= link_to 'Home', root_path
@@ -12,31 +12,18 @@
           = @item.manufacturer.name
         .h1
           = @item.name
-        %p
-          .lead= @item.description
+        %p.lead
+          = @item.description
       .large-4.columns
         .right
-          = image_tag @item.image.url(:medium).to_s, :class=>"th radius fix_thumb"
+          = image_tag @item.image.url(:medium).to_s, :class=>"th radius fixthumb"
 
-
+.res
   .row
-    .large-12.columns
-      %h3 Available Resources
-      / - if @item.apms.present?
-      /   .panel
-      /     %p
-      /       Applies to following models:
-      /       - @item.apms.each do |tg|
-      /         %span.label.label-default= tg
-      / Nav tabs
-      -# %dl.tabs{"data-tab" => "true"}
-      -#   %dd.active
-      -#     %a{:href => "#documents"} FILES
-      -#   -# %dd
-      -#   -#   %a{:href => "#drivers"} DRIVERS
-      -# .tabs-content
-      -#   #documents.content.active
-      %table.table.table-striped.table-hover
+    .large-12.columns.fixwidth
+      .ares.fixwidth
+        %h3 Available Resources
+      %table.table.table-striped.table-hover.fixwidth
         %thead
           %tr
             %th{width: 850}
@@ -48,19 +35,6 @@
             = render 'empty'
           - else
             = render partial: 'document', collection: @item.documents
-        -# #drivers.content
-        -#   %table.table.table-striped.table-hover
-        -#     %thead
-        -#       %tr
-        -#         %th{width: 840}
-        -#           Filename
-        -#         %th{width: 100}
-        -#           Download
-        -#     %tbody
-        -#       - if @item.attachments.empty?
-        -#         = render 'empty'
-        -#       - else
-        -#         = render partial: 'attachment', collection: @attachments
 
   -if user_signed_in?
     .row
