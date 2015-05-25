@@ -3,8 +3,28 @@
 
 // override for the 'Home' navigation link
 
-.top-bar {
-  background: #4183D7;
+// .top-bar {
+//   // background: #4183D7;
+//   background: url("http://cdn.ibcworld.net/wp-content/themes/ibc/images/servicebox_span_bg.jpg") repeat-x;
+//   background-position: -2500px -28px;
+//   // border-bottom: solid 2px #fff;
+// }
+
+.rad {
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.brad {
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .top-bar .name {
@@ -16,16 +36,16 @@
   padding: 0 15px; 
   font-size: 2em; }
 
+// #title a {
+//   color: #444;
+// }
+
 .midpagec {
   background: #22A7F0;
-  -webkit-box-shadow: 0 4px 0 0 #4183D7;
-  box-shadow: 0 4px 0 0 #4183D7;
 }
 
 .lowpagec .top-bar {
   background: #22A7F0;
-  -webkit-box-shadow: 0 4px 0 0 #16A085;
-  box-shadow: 0 4px 0 0 #16A085;
   .has-form {
     background: none;
     padding: 0 25px 0 0;
@@ -68,13 +88,17 @@
 // to make views framework-neutral
 main {
   @include twelve-columns;
-  background-color: #4183D7;
+  // background-color: #4183D7;
+  background: url("http://cdn.ibcworld.net/wp-content/themes/ibc/images/bannerspan_tile.jpg") repeat-x;
+  background-color: #dbdbdb;
   color: #fff;
-  padding: 0 0 20px 0;
-  }
+  padding: 0;
+}
+
 itempanel {
   @include twelve-columns;
-  background-color: #2ECC71;
+  // background-color: #2ECC71;
+  background: #dbdbdb;
   color: #fff;
   padding: 20px 0 0 0;
     h2 {
@@ -85,6 +109,10 @@ itempanel {
 section {
   @extend .row;
   margin-top: 20px;
+}
+
+body {
+  background: #6C7A89;
 }
 
 
@@ -144,7 +172,11 @@ section {
   padding-bottom: 4px;
 }
 
-.top_h h1 {
+.top_h h1{
+  color: #eee;
+}
+
+.top_h h3{
   color: #eee;
 }
 
@@ -359,10 +391,10 @@ legend {
   // background: rgba(33,33,33,0.1);
 }
 
-.top-bar {
-  line-height: 0; 
-  vertical-align: top;
-}
+// .top-bar {
+//   line-height: 0; 
+//   vertical-align: top;
+// }
 
 .desc {
   // background: rgba(33,33,33,0.8);

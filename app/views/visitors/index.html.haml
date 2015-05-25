@@ -3,7 +3,7 @@
     .large-12.columns
       / %h2 SERVICES
       .top_h
-        %h1 CUSTOMER SELF-SERVICE PORTAL
+        %h3 CUSTOMER SELF-SERVICE PORTAL
         %p You may find quick start guides, drivers, and manuals for your purchased devices here.
   .container
     / = render 'layouts/slides'
@@ -12,19 +12,11 @@
   .row
     .large-12.columns
       .browselist.lowpagec
-        %nav.top-bar{"data-topbar" => true}
+        %nav.top-bar.rad{"data-topbar" => true}
           %ul.title-area
             %li.name
               %a{:href => "#"} SUPPORT RESOURCES
-          %section.top-bar-section.right
-            %ul
-              %li.has-form
-                .row.collapse
-                  .large-8.small-9.columns
-                    %input{:type => "text", :placeholder => "Find stuff"}
-                  .large-4.small-3.columns
-                    %a.alert.button.expand{:href => "#"} Search
-        .panel.radius.browsep
+        .panel.browsep.brad
           .grid
             %p Browse or Search for your device to download documentation and drivers.
             / Nav tabs
