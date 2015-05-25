@@ -112,7 +112,7 @@ section {
 }
 
 body {
-  background: #6C7A89;
+  background: #dbdbdb; // #6C7A89;
 }
 
 
@@ -464,7 +464,7 @@ table {
 
 $include-html-tabs-classes: $include-html-classes;
 
- $tabs-navigation-padding: rem-calc(8);
+ $tabs-navigation-padding: rem-calc(4);
  $tabs-navigation-bg-color: #efefef  ;
  $tabs-navigation-hover-bg-color: darken($tabs-navigation-bg-color, 5%);
  $tabs-navigation-font-color: #222;
@@ -494,7 +494,35 @@ $include-html-tabs-classes: $include-html-classes;
      padding-left: 1rem;
      width: 70%;
    }
+   .tab-title {
+    border: solid 1px #efefef;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    margin: 1px;
+   }
  }
+
+ .tabs dd.active a,
+ .tabs .tab-title.active a {
+   background-color: #FFFFFF;
+   color: #222222;
+   // border: solid 1px #efefef;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+ }
+
+ .tabs dd > a:hover,
+ .tabs .tab-title > a:hover {
+   background-color: #e1e1e1;
+   // border: solid 1px #efefef;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+ }
+
+ 
 
 //@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
 
@@ -653,6 +681,12 @@ td.text-right {
 }
 
 .res {
+  background-color: #dbdbdb;
+}
+
+#foot {
+  bottom: 0;
+  height: 100%;
   background-color: #dbdbdb;
 }
 

@@ -20,7 +20,7 @@
 
 .res
   .row
-    .large-12.columns.fixwidth
+    .large-12.columns.fixwidth.fixh
       .ares.fixwidth
         %h3 Available Resources
       %table.table.table-striped.table-hover.fixwidth
@@ -35,7 +35,6 @@
             = render 'empty'
           - else
             = render partial: 'document', collection: @item.documents
-
   -if user_signed_in?
     .row
       .large-2.columns
