@@ -21,20 +21,29 @@
 .res
   .row
     .large-12.columns.fixwidth.fixh
-      .ares.fixwidth
-        %h3 Available Resources
-      %table.table.table-striped.table-hover.fixwidth
-        %thead
-          %tr
-            %th{width: 850}
-              Filename
-            %th{width: 100}
-              Kind
-        %tbody
-          - if @item.documents.empty?
-            = render 'empty'
-          - else
-            = render partial: 'document', collection: @item.documents
+      .resources
+        %nav.top-bar.rad{"data-topbar" => true}
+          %ul.title-area
+            %li.name
+              %a{:href => "#"} AVAILABLE RESOURCES
+        .panel.brad
+          %p
+            For reading PDF, please download 
+            %a{:href => "https://get.adobe.com/reader/"} Adobe Reader. 
+            For .zip files we recommend 
+            %a{:href => "http://www.7-zip.org/download.html"} 7Zip.
+          %table.table.table-striped.table-hover.fixwidth
+            %thead
+              %tr
+                %th{width: 850}
+                  Filename
+                %th{width: 100}
+                  Kind
+            %tbody
+              - if @item.documents.empty?
+                = render 'empty'
+              - else
+                = render partial: 'document', collection: @item.documents
   -if user_signed_in?
     .row
       .large-2.columns
