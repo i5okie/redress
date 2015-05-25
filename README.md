@@ -13,11 +13,6 @@ List your products with description, pictures, links, upload user manuals, and d
 
 This is a complete rewrite of the original project.
 
-
-todo: edit this:
-A visitor is first met with any marketing information, and contact information
-of how to get phone assistance or remote tech support (optional).
-
 At this point the main functionality of the app is to list products
 and list downloadable documents like user guides, manuals, as well as drivers
 and utilities. As an option, videos can be added either by uploading, or embedding.
@@ -42,14 +37,20 @@ Ruby on Rails
 
 This application requires:
 
-- Ruby 2.2.0
+- Ruby 2.2.1
 - Rails 4.2.0
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
+- PostgreSQL 9.3+
 
 Getting Started
 ---------------
-[too early]
+- Make sure you have Ruby 2.2.1
+- Clone git repo, or download .zip
+- run bin/bundle install
+- confirm database.yml settings
+- bin/rake db:setup
+- make note of default admin user/password created in console (or look in seeds.rb)
+- run bin/rails server
+- login and populate. (right now it's configured to upload to Amazon S3, so either change settings as needed or change it to local file storage)
 
 Screen Shots
 ------------
@@ -73,8 +74,12 @@ Contributions are welcome and encouraged. Please feel free to fork this project 
 Credits
 -------
 @i5okie
-
 @rhizome
+
+
+
+
+
 
 License
 -------

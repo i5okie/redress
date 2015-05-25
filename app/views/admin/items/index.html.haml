@@ -28,15 +28,7 @@
 
                   = link_to admin_item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert tiny" do
                     %i.fa.fa-trash-o.fa-fw
-
-
     %br
-
-
-
-
 .row
   .large-12.columns
     = paginate @items
-
-    / %a.button.alert.tiny{:href => item, method: :delete, data: { confirm: 'Are you sure?' }}
