@@ -1,30 +1,22 @@
 Redress
 ================
 
-[LIVE DEMO](https://secret-forest-2712.herokuapp.com)
+[LIVE DEMO](https://help.ibcworld.net)
 
 
-
-Self-Service Portal Project for manufacturers and resellers
+Self-Service Driver/Documentation CMS
 -----------
 
-Redress is a basic customer self-service portal for VARs and OEMS.
-List your products with description, pictures, links, upload user manuals, and drivers.
 
-This is a complete rewrite of the original project.
+For visitors, Redress is a basic go-to self-service portal to download documentation and drivers for products.
 
-At this point the main functionality of the app is to list products
-and list downloadable documents like user guides, manuals, as well as drivers
-and utilities. As an option, videos can be added either by uploading, or embedding.
-visitors can then chose their product and download the appropriate documentation or
-utilities.
+For administrators, Redress is an easy to use CMS to list your products, with brief description, photo, user guides and manuals, drivers, etc.
 
-This is a work-in-progress project. Being developed for a value-added-reseller;
-Dealing with many different products, a lot of value-added components of a complete
-system need to have supporting implemintation documentation which sometimes is not 
-availble elsewhere.
+Redress was born out of necessity to replace an aging single HTML file listing FTP links to download quick configuration guides, drivers, and etc. Redress is slightly opinionated by storing uploads on Amazon S3 (can be configured to any other FOG provider). This has some obvious benefits, especially when comparing to local or FTP storage. With a baked in administration instead of a admin gem, managing product listings is simple and intuitive. By default the app expects a Mandrill account for
+notification emails. However this can be configured to just use a simple SMTP server to your preference.
 
-The project is being developed with open-source license in hopes to add further
+
+The project is being developed with an open-source license in hopes to add further
 functionality in the future. Some of this functionality could be issue tracking,
 product tracking. Generating printable barcode label for customers to scan and
 direct to specific product page, where they will be able to see any warranty information
@@ -32,23 +24,23 @@ as well as service contracts, etc.
 
 
 
-Ruby on Rails
+The Guts
 -------------
 
-This application requires:
-
-- Ruby 2.2.1
-- Rails 4.2.0
-- PostgreSQL 9.3+
+- Ruby 2.2.3
+- Rails 4.2.4
+- PostgreSQL
+- Amazon S3 (expects by default, can be changed in configuration)
+- Mandrill (expects by default, can be changed in configuration)
 
 Getting Started
 ---------------
-- Make sure you have Ruby 2.2.1
+- Make sure you have Ruby 2.2.3
 - Clone git repo, or download .zip
 - run bin/bundle install
 - confirm database.yml settings
 - bin/rake db:setup
-- make note of default admin user/password created in console (or look in seeds.rb)
+- make note of default admin user/password created in console (or look in seeds.rb), for production this is set in .env
 - run bin/rails server
 - login and populate. (right now it's configured to upload to Amazon S3, so either change settings as needed or change it to local file storage)
 
@@ -59,9 +51,6 @@ Screen Shots
 
 ![](http://i.imgur.com/27bADoh.png)
 
-Documentation and Support
--------------------------
-none yet..
 
 Issues
 -------------
@@ -69,15 +58,12 @@ If you come across some bugs or errors, please [report an issue](https://github.
 
 Contributing
 ------------
-Contributions are welcome and encouraged. Please feel free to fork this project and submit issues/feature and pull requests.
+Contributions are welcome with open arms. Please feel free to fork this project and submit issues/feature and pull requests.
 
 Credits
 -------
 @i5okie
 @rhizome
-
-
-
 
 
 
