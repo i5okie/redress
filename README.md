@@ -42,11 +42,9 @@ Contributing
 Pull requests, feature suggetions, and bug reports are all welcome.
 
 
-Credits
+Special Thanks
 -------
-@i5okie
-@rhizome
-
+A special thanks is due to @rhizome for serious contributions and help during the initial development of the project on the old repo.
 
 
 License
