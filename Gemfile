@@ -14,19 +14,18 @@ gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 gem 'devise'
 gem 'carrierwave'
-gem "fog"
-gem "mini_magick"
+gem 'fog'
+gem 'mini_magick'
 
-gem "ransack"
+gem 'ransack'
 gem 'kaminari'
 gem 'pundit'
-gem "figaro"
 
-gem "best_in_place"
+gem 'best_in_place'
 gem 'high_voltage'
 
 group :production do
@@ -41,7 +40,7 @@ group :development do
 end
 
 group :development, :test do
-  gem "awesome_print"
+  gem 'awesome_print'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'pry-rails'
