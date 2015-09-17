@@ -10,7 +10,7 @@ deploy:
   provider: heroku
   api_key:
     secure: O/pqaEpd+Fuwrj6DPFEfr06y2h/rV7ulU1n+Zq1QdEIhnxEwqrgVB9edlUGGmtfKSzHUhB5MjKrH9sNq1HoOepwg9bBUHI91f9Zg6CBSpWEw3BOg2YqUS6Z3pyj1LdJftVqC652gnZj/UqfAE8BYDf1jz2PbJdlh8Y8+QTvUixs=
-  app: secret-forest-2712
+  app: dry-basin-5428
   on:
     repo: i5okie/redress
 env:
