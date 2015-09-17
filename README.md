@@ -47,10 +47,9 @@ Special Thanks
 A special thanks is due to @rhizome for serious contributions and help during the initial development of the project on the old repo.
 
 
+
 License
 -------
-Copyright (c) 2015 Ivan Polchenko
-
 MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining
