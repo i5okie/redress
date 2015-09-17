@@ -1,7 +1,7 @@
 Redress
 ================
 
-[LIVE DEMO](https://help.ibcworld.net)
+[LIVE DEMO](http://help.ibcworld.net)
 
 
 Self-Service Driver/Documentation CMS
