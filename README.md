@@ -1,10 +1,8 @@
 Redress
 ================
-
 [LIVE DEMO](http://help.ibcworld.net)
 
-
-REDRESS is an Open Source Self-Service Driver/Documentation CMS
+Open Source Self-Service Driver/Documentation CMS
 -----------
 
 For visitors, Redress is a basic, go-to self-service portal to download documentation and drivers for products.
