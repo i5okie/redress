@@ -1,6 +1,7 @@
 Redress
 ================
 [LIVE DEMO](http://help.ibcworld.net)
+[![Build Status](https://travis-ci.org/i5okie/redress.svg?branch=master)](https://travis-ci.org/i5okie/redress)
 
 Open Source Self-Service Driver/Documentation CMS
 -----------
